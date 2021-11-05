@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "j@d.com",
+      "password": "12345",
+      "role": "admin"
+    },
+    {
+      "name": "Annie Foden",
+      "email": "a@f.comff",
+      "password": "67890",
+      "role": "user",
+      "id": "2"
+    }
+  ]
+}

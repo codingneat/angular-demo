@@ -1,0 +1,12 @@
+<ng-template #content>
+  <span *ngIf="message">{{ message | transloco }} </span>
+  <ng-content></ng-content>
+</ng-template>
+<button
+  (click)="click()"
+  class="bg-{{ type }}-400 hover:bg-{{ type }}-500 text-white rounded-full py-2 px-10"
+  [ngClass]="{ 'disabled:opacity-50': disabled }"
+  type="button"
+>
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+</button>

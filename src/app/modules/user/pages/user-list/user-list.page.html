@@ -1,0 +1,34 @@
+<a class="mb-10" [routerLink]="['/admin/user']">
+  {{ 'globals.add' | transloco }} {{ 'models.user.user' | transloco }}
+</a>
+
+<div class="container flex justify-center mx-auto mt-10">
+  <div class="flex flex-col">
+    <div class="w-full">
+      <div class="border-b border-gray-200 shadow">
+        <table class="divide-y divide-gray-300">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-6 py-2 text-xs text-gray-500">{{ 'models.user.name' | transloco }}</th>
+              <th class="px-6 py-2 text-xs text-gray-500">{{ 'models.user.email' | transloco }}</th>
+              <th class="px-6 py-2 text-xs text-gray-500">{{ 'models.user.role' | transloco }}</th>
+              <th class="px-6 py-2 text-xs text-gray-500"></th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-300">
+            <tr class="whitespace-nowrap" *ngFor="let user of users$ | async; trackBy: trackById">
+              <td class="px-6 py-4 text-sm text-gray-500">{{ user?.name }}</td>
+              <td class="px-6 py-4 text-sm text-gray-500">{{ user?.email }}</td>
+              <td class="px-6 py-4 text-sm text-gray-500">{{ user?.role }}</td>
+              <td class="px-6 py-4 text-sm text-gray-500">
+                <app-button (onClick)="deleteUser(user.id)" type="red" message="globals.delete" class="mr-10">
+                </app-button>
+                <app-button (onClick)="goToEdit(user.id)" message="globals.edit"> </app-button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

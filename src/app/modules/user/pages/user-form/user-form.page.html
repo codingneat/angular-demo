@@ -1,0 +1,39 @@
+<form novalidate [formGroup]="userForm">
+  <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2"> {{'models.user.name' | transloco}} </label>
+      <input
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+        id="name"
+        type="text"
+        formControlName="name"
+        placeholder="{{'models.user.name' | transloco}}"
+      />
+    </div>
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2"> {{'models.user.email' | transloco}} </label>
+      <input
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+        id="email"
+        type="text"
+        formControlName="email"
+        placeholder="{{'models.user.email' | transloco}}"
+      />
+    </div>
+    <div class="mb-6">
+      <label class="block text-grey-darker text-sm font-bold mb-2"> {{'models.user.password' | transloco}} </label>
+      <input
+        class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+        id="password"
+        type="password"
+        formControlName="password"
+        placeholder="{{'models.user.password' | transloco}}"
+      />
+    </div>
+    <div class="flex items-center justify-between">
+      <app-button class="mx-2 mt-12" (onClick)="submitForm()" [disabled]="!userForm.valid" message="globals.save">
+      </app-button>
+      <app-button class="mx-2 mt-12 ml-10" (onClick)="cancel()" type="red" message="globals.cancel"> </app-button>
+    </div>
+  </div>
+</form>

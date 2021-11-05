@@ -1,0 +1,26 @@
+{
+  "project": {
+    "name": "Pulzo"
+  },
+  "globals": {
+    "save": "Save",
+    "list": "Lista",
+    "add": "Añadir",
+    "login": "Login",
+    "delete": "Borrar",
+    "edit": "Editar",
+    "cancel": "Cancelar"
+  },
+  "models": {
+    "user": {
+      "user": "Usuario",
+      "email": "Email",
+      "name": "Name",
+      "password": "Password",
+      "role": "Role"
+    }
+  },
+  "layout": {
+    "footer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+  }
+}
